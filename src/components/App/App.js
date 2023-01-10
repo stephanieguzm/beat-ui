@@ -1,23 +1,47 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import { Switch, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Stories } from '../Stories/Stories.js';
+import { FullStory } from '../FullStory/FullStory.js';
+import { getTopStories } from '../../apiCalls.js'
 import './App.css';
 
-function App() {
+const App = () => {
+
+  const [ topStories, setTopStories ] = useState([])
+
+  useEffect(() => {
+    getTopStories('home')
+      .then(data => {
+        setTopStories(data)
+    })
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='app'>
+      <header className='header-container'>
+        <h1>The Beat</h1>
       </header>
+      <main>
+        <Switch>
+          <Route 
+            exact path='/'
+            render={() => {
+              return <Stories topStories={topStories}/>
+            }}
+           />
+          <Route 
+            exact path='/:id'
+            render={(match) => {
+              console.log(match.params.id)
+              return <FullStory storyId={parseInt(match.params.id)} />
+            }}
+           />
+        </Switch>
+      </main>
+      <footer className='footer-container'>
+        <p className='footer-text' data-cy='footer-text'>&#169; <a href='https://github.com/stephanieguzm/beat-ui' target='_blank' rel='noreferrer'> 2023 Stephanie Guzman</a></p>
+      </footer>
     </div>
   );
 }
