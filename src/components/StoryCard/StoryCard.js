@@ -5,10 +5,9 @@ export const StoryCard = ({ story }) => {
   return (
     <Link to={`/${story.id}`}>
       <section className='story-card' id={story.id}>
-        <h1>{story.title}</h1>
+        <h2>{story.title}</h2>
         <p>{story.section}</p>
         <p>{story.byline}</p>
-        <p>{story.longUrl}</p>
       </section>
     </Link>
   )

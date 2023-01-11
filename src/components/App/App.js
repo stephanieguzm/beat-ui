@@ -24,7 +24,7 @@ const App = () => {
     <div className='app'>
       <header className='header-container'>
         <h1>The Beat</h1>
-        <h3 className='home-btn'data-cy='home-btn'>{homeLink}</h3>
+        <p className='home-btn'data-cy='home-btn'>{homeLink}</p>
       </header>
       <main>
         <Switch>

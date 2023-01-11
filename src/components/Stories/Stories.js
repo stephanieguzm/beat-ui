@@ -12,7 +12,6 @@ export const Stories = ({ topStories }) => {
 
   return (
     <section className='stories-container'>
-      <h1>This is the stories container</h1>
       {storyCards}
     </section>
   )
