@@ -9,6 +9,7 @@ import './App.css';
 const App = () => {
 
   const [ topStories, setTopStories ] = useState([])
+  // const [ selectedStoryId, setSelectedStoryId ] = useState('')
 
   useEffect(() => {
     getTopStories('home')
@@ -27,16 +28,21 @@ const App = () => {
           <Route 
             exact path='/'
             render={() => {
-              return <Stories topStories={topStories}/>
+              return <Stories 
+                topStories={topStories} 
+              />
             }}
-           />
+          />
           <Route 
             exact path='/:id'
-            render={(match) => {
-              console.log(match.params.id)
-              return <FullStory storyId={parseInt(match.params.id)} />
+            render={({ match }) => {
+              console.log(match)
+              return <FullStory 
+                topStories={topStories} 
+                storyId={parseInt(match.params.id)} 
+              />
             }}
-           />
+          />
         </Switch>
       </main>
       <footer className='footer-container'>
