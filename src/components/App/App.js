@@ -9,7 +9,7 @@ import './App.css';
 const App = () => {
 
   const [ topStories, setTopStories ] = useState([])
-  // const [ selectedStoryId, setSelectedStoryId ] = useState('')
+
 
   useEffect(() => {
     getTopStories('home')
@@ -36,10 +36,9 @@ const App = () => {
           <Route 
             exact path='/:id'
             render={({ match }) => {
-              console.log(match)
               return <FullStory 
                 topStories={topStories} 
-                storyId={parseInt(match.params.id)} 
+                storyId={match.params.id} 
               />
             }}
           />

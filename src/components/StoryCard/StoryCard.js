@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom'
 import './StoryCard.css'
 
 export const StoryCard = ({ story }) => {
-
-  console.log(story)
   return (
     <Link to={`/${story.id}`}>
       <section className='story-card' id={story.id}>
