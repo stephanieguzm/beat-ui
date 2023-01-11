@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid'
 const API_KEY = process.env.REACT_APP_API_KEY
 
 export const getTopStories = async (section) => {
@@ -19,7 +20,8 @@ export const getTopStories = async (section) => {
         shortUrl: result.short_url,
         longUrl: result.url,
         publishedDate: result.published_date,
-        updatedDate: result.updated_date
+        updatedDate: result.updated_date,
+        id: nanoid()
       }
     })
 

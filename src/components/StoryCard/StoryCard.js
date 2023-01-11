@@ -1,9 +1,10 @@
 import './StoryCard.css'
 
-export const StoryCard = () => {
+export const StoryCard = ({ story }) => {
+
   return (
     <section className='story-card'>
-      <h1>This is a story card</h1>
+      <h1>{story.title}</h1>
     </section>
   )
 }
