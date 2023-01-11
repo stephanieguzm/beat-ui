@@ -12,7 +12,7 @@ export const getTopStories = async (section) => {
     }
     const cleanData = data.results.map(result => {
       return { 
-        section: result.section,
+        section: result.section.toUpperCase(),
         title: result.title,
         abstract: result.abstract,
         byline: result.byline,
