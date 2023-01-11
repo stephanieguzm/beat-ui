@@ -1,0 +1,4 @@
+section a:link {
+  text-decoration: none;
+  color: var(--body-text-color)
+}
