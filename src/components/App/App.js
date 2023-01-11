@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Stories } from '../Stories/Stories.js';
 import { FullStory } from '../FullStory/FullStory.js';
@@ -10,6 +10,8 @@ const App = () => {
 
   const [ topStories, setTopStories ] = useState([])
 
+  let location = useLocation()
+  const homeLink = location.pathname !== "/" && <Link className ='home-btn' data-cy="home-btn" to="/">Home</Link>
 
   useEffect(() => {
     getTopStories('home')
@@ -22,6 +24,7 @@ const App = () => {
     <div className='app'>
       <header className='header-container'>
         <h1>The Beat</h1>
+        <h3 className='home-btn'data-cy='home-btn'>{homeLink}</h3>
       </header>
       <main>
         <Switch>
