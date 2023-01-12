@@ -32,7 +32,7 @@ const App = () => {
     <div className='app'>
       <header className='header-container'>
         <Link to='/'><h1>The Beat</h1></Link>
-        <p>{pageTitle}</p>
+        <p>{pageTitle} SECTION</p>
         <p className='home-btn'data-cy='home-btn'>{homeLink}</p>
       </header>
       <main className='main-container'>

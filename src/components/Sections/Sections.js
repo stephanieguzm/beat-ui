@@ -28,7 +28,7 @@ export const Sections = ({ setUserSelectedSelection }) => {
   return (
     <section className="sidebar">
       <article className='section-container'>
-        <h2>Browse By Section</h2>
+        <h2 className='section-text'>Browse By Section</h2>
         {sectionOptions}
       </article>
     </section>

@@ -5,18 +5,16 @@
   --body-font: 'Poppins', sans-serif;
 }
 
-/* * {
-  border: 1px solid red
-} */
-
 h1, h2 {
   font-family: var(--header-font);
-  color: var(--header-text-color)
+  color: var(--header-text-color);
+  text-align: center;
 }
 
 p {
   color: var(--body-text-color);
-  font-family: var(--body-font)
+  font-family: var(--body-font);
+  text-align: center;
 }
 
 header {
@@ -50,11 +48,7 @@ footer {
   color: var(--header-text-color)
 }
 
-
-section a:link,
-.footer-text a:link ,
-.home-btn,
-h1 > a:link {
+a {
   text-decoration: none;
   color: var(--header-text-color)
 }
@@ -71,6 +65,8 @@ main {
 .section-container {
   display: flex;
   flex-direction: column;
+  width: auto;
+  align-items: center;
 }
 
 .stories-container,
@@ -82,7 +78,7 @@ main {
 
 .section-btn {
   width: 10vw;
-  height: 35px;
+  height: 30px;
   margin: 1vh 0;
   cursor: pointer;
   transition: all 0.2s;
