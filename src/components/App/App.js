@@ -15,6 +15,8 @@ const App = () => {
   let location = useLocation()
   const homeLink = location.pathname !== "/" && <NavLink className ='home-btn' data-cy="home-btn" to="/">BACK</NavLink>
 
+  let pageTitle = userSelectedSelection ? userSelectedSelection.toUpperCase() : "HOME"
+
   useEffect(() => {
     getTopStories(userSelectedSelection ? userSelectedSelection : 'home')
       .then(data => {
@@ -26,6 +28,7 @@ const App = () => {
     <div className='app'>
       <header className='header-container'>
         <h1>The Beat</h1>
+        <p>{pageTitle}</p>
         <p className='home-btn'data-cy='home-btn'>{homeLink}</p>
       </header>
       <main>
