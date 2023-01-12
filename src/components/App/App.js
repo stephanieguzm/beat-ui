@@ -1,4 +1,4 @@
-import { Switch, Route, NavLink, useLocation } from 'react-router-dom';
+import { Switch, Route, NavLink, Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Stories } from '../Stories/Stories.js';
 import { FullStory } from '../FullStory/FullStory.js';
@@ -31,11 +31,11 @@ const App = () => {
   return (
     <div className='app'>
       <header className='header-container'>
-        <h1>The Beat</h1>
+        <Link to='/'><h1>The Beat</h1></Link>
         <p>{pageTitle}</p>
         <p className='home-btn'data-cy='home-btn'>{homeLink}</p>
       </header>
-      <main>
+      <main className='main-container'>
         <Sections 
           setUserSelectedSelection={setUserSelectedSelection}
         />

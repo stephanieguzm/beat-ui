@@ -13,7 +13,7 @@ export const Sections = ({ setUserSelectedSelection }) => {
     return (
       <Link to='/'>
         <button
-          className='section'
+          className='section-btn'
           value={section}
           onClick={(event) => handleClick(event)}
           id={sections.indexOf(section)}
@@ -26,8 +26,11 @@ export const Sections = ({ setUserSelectedSelection }) => {
   })
 
   return (
-    <article className='section-container'>
-      {sectionOptions}
-    </article>
+    <section className="sidebar">
+      <article className='section-container'>
+        <h2>Browse By Section</h2>
+        {sectionOptions}
+      </article>
+    </section>
   )
 }

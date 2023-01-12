@@ -1,4 +1,15 @@
 section a:link {
   text-decoration: none;
-  color: var(--body-text-color)
+  color: var(--header-text-color)
 }
+
+.story-card {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.story-card > a:link {
+  margin: 0;
+}
+
