@@ -50,7 +50,8 @@ footer {
 
 a {
   text-decoration: none;
-  color: var(--header-text-color)
+  color: var(--header-text-color);
+  margin: 0;
 }
 
 main {
@@ -73,6 +74,8 @@ main {
 .full-story-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  width: 100%;
   margin: 0 30px;
 }
 
