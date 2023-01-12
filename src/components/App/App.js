@@ -9,7 +9,7 @@ import './App.css';
 const App = () => {
 
   const [ topStories, setTopStories ] = useState([])
-  // const [ error, setError ] = useState([])
+  const [ error, setError ] = useState('')
   const [ userSelectedSelection, setUserSelectedSelection ] = useState('')
   
   let location = useLocation()
@@ -21,6 +21,9 @@ const App = () => {
     getTopStories(userSelectedSelection ? userSelectedSelection : 'home')
       .then(data => {
         setTopStories(data)
+      })
+      .catch(error => {
+        setError(`We're not able to show you top stories at this time. Please visit us again later.`)
     })
   }, [userSelectedSelection])
 
@@ -35,7 +38,8 @@ const App = () => {
         <Sections 
           setUserSelectedSelection={setUserSelectedSelection}
         />
-        <Switch>
+        {error && <h2>We're sorry. We're not able to show you top stories at this time. Please visit us again later.</h2>}
+        {topStories && !error && <Switch>
           <Route 
             exact path='/'
             render={() => {
@@ -53,7 +57,7 @@ const App = () => {
               />
             }}
           />
-        </Switch>
+        </Switch>}
       </main>
       <footer className='footer-container'>
         <p className='footer-text' data-cy='footer-text'>&#169; <a href='https://github.com/stephanieguzm/beat-ui' target='_blank' rel='noreferrer'> 2023 Stephanie Guzman</a></p>
