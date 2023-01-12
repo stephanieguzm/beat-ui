@@ -10,6 +10,7 @@ export const getTopStories = async (section) => {
       console.log(data.description)
       throw new Error(response.status)
     }
+
     const cleanData = data.results.map(result => {
       return { 
         section: result.section.toUpperCase(),
@@ -24,12 +25,11 @@ export const getTopStories = async (section) => {
         id: nanoid()
       }
     })
-
     return cleanData
 
   } catch (error) {
     if (error) {
-      console.log(error)
+      return error
     }
   }
 }
