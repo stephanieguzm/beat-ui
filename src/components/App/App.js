@@ -4,6 +4,7 @@ import { Stories } from '../Stories/Stories.js';
 import { FullStory } from '../FullStory/FullStory.js';
 import { Sections } from '../Sections/Sections.js';
 import { getTopStories } from '../../apiCalls.js'
+import { PageNotFound } from '../PageNotFound/PageNotFound.js';
 import './App.css';
 
 const App = () => {
@@ -57,6 +58,7 @@ const App = () => {
               />
             }}
           />
+          <Route path='*' component={PageNotFound} />
         </Switch>}
       </main>
       <footer className='footer-container'>
