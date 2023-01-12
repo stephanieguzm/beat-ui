@@ -1,4 +1,6 @@
-section a:link {
-  text-decoration: none;
-  color: var(--body-text-color)
+.story-card {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
 }
+

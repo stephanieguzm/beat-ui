@@ -1,9 +1,10 @@
-import { Switch, Route, NavLink, useLocation } from 'react-router-dom';
+import { Switch, Route, NavLink, Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Stories } from '../Stories/Stories.js';
 import { FullStory } from '../FullStory/FullStory.js';
 import { Sections } from '../Sections/Sections.js';
 import { getTopStories } from '../../apiCalls.js'
+import { PageNotFound } from '../PageNotFound/PageNotFound.js';
 import './App.css';
 
 const App = () => {
@@ -30,11 +31,11 @@ const App = () => {
   return (
     <div className='app'>
       <header className='header-container'>
-        <h1>The Beat</h1>
-        <p>{pageTitle}</p>
+        <Link to='/'><h1>The Beat</h1></Link>
+        <p>{pageTitle} SECTION</p>
         <p className='home-btn'data-cy='home-btn'>{homeLink}</p>
       </header>
-      <main>
+      <main className='main-container'>
         <Sections 
           setUserSelectedSelection={setUserSelectedSelection}
         />
@@ -57,6 +58,7 @@ const App = () => {
               />
             }}
           />
+          <Route path='*' component={PageNotFound} />
         </Switch>}
       </main>
       <footer className='footer-container'>

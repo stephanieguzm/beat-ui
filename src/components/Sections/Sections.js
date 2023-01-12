@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid'
 import { Link } from 'react-router-dom'
 import './Sections.css'
 
@@ -14,10 +13,12 @@ export const Sections = ({ setUserSelectedSelection }) => {
     return (
       <Link to='/'>
         <button
-          className='section'
+          className='section-btn'
           value={section}
           onClick={(event) => handleClick(event)}
-          key={nanoid()}>
+          id={sections.indexOf(section)}
+          key={sections.indexOf(section)}>
+            {/* {console.log('section index', sections.indexOf(section))} */}
           {section.toUpperCase()}
         </button>
       </Link>
@@ -25,8 +26,11 @@ export const Sections = ({ setUserSelectedSelection }) => {
   })
 
   return (
-    <article className='section-container'>
-      {sectionOptions}
-    </article>
+    <section className="sidebar">
+      <article className='section-container'>
+        <h2 className='section-text'>Browse By Section</h2>
+        {sectionOptions}
+      </article>
+    </section>
   )
 }
