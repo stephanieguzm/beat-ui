@@ -37,6 +37,12 @@ header {
   margin: 0;
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  margin-left: calc(10vw - 10px);
+}
+
 footer {
   font-size: 12px;
   box-sizing: border-box;
@@ -74,7 +80,6 @@ main {
 .full-story-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 100%;
   margin: 0 30px;
 }
