@@ -1,24 +1,26 @@
-// import logo from './logo.svg';
-import { Switch, Route, Link, useLocation } from 'react-router-dom';
+import { Switch, Route, NavLink, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Stories } from '../Stories/Stories.js';
 import { FullStory } from '../FullStory/FullStory.js';
+import { Sections } from '../Sections/Sections.js';
 import { getTopStories } from '../../apiCalls.js'
 import './App.css';
 
 const App = () => {
 
   const [ topStories, setTopStories ] = useState([])
-
+  // const [ error, setError ] = useState([])
+  const [ userSelectedSelection, setUserSelectedSelection ] = useState('')
+  
   let location = useLocation()
-  const homeLink = location.pathname !== "/" && <Link className ='home-btn' data-cy="home-btn" to="/">Home</Link>
+  const homeLink = location.pathname !== "/" && <NavLink className ='home-btn' data-cy="home-btn" to="/">BACK</NavLink>
 
   useEffect(() => {
-    getTopStories('home')
+    getTopStories(userSelectedSelection ? userSelectedSelection : 'home')
       .then(data => {
         setTopStories(data)
     })
-  }, [])
+  }, [userSelectedSelection])
 
   return (
     <div className='app'>
@@ -27,6 +29,9 @@ const App = () => {
         <p className='home-btn'data-cy='home-btn'>{homeLink}</p>
       </header>
       <main>
+        <Sections 
+          setUserSelectedSelection={setUserSelectedSelection}
+        />
         <Switch>
           <Route 
             exact path='/'
@@ -40,7 +45,7 @@ const App = () => {
             exact path='/:id'
             render={({ match }) => {
               return <FullStory 
-                topStories={topStories} 
+                topStories={topStories}
                 storyId={match.params.id} 
               />
             }}
