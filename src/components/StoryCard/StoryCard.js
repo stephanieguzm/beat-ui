@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom'
 import './StoryCard.css'
 
-export const StoryCard = ({ story }) => {
+export const StoryCard = ({ id, title, byline, section, img, imgCaption }) => {
+
   return (
-    <Link to={`/${story.id}`}>
-      <section className='story-card' id={story.id}>
-        <img className='card-img' src={story.multimedia[1].url} alt={story.multimedia[1].caption} />
-        <h2>{story.title}</h2>
-        <p>{story.byline}</p>
-        <p>{story.section}</p>
+    <Link to={`/${id}`}>
+      <section className='story-card' id={id}>
+        <img className='card-img' src={img} alt={imgCaption} />
+        <h2>{title}</h2>
+        <p>{byline}</p>
+        <p>{section}</p>
       </section>
     </Link>
   )
