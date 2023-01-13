@@ -9,7 +9,6 @@ export const Stories = ({ topStories }) => {
       id={story.id}
       title={story.title}
       byline={story.byline}
-      section={story.section}
       img={!story.multimedia ? nyTimesLogo : story.multimedia[1].url}
       imgCaption={!story.multimedia ? story.title : story.multimedia[1].copyright}
       key={story.id}

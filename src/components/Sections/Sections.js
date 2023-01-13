@@ -11,14 +11,12 @@ export const Sections = ({ setUserSelectedSelection }) => {
   
   const sectionOptions = sections.map(section => {
     return (
-      <Link to='/'>
+      <Link to='/' key={sections.indexOf(section)}>
         <button
           className='section-btn'
           value={section}
           onClick={(event) => handleClick(event)}
-          id={sections.indexOf(section)}
-          key={sections.indexOf(section)}>
-            {/* {console.log('section index', sections.indexOf(section))} */}
+          id={sections.indexOf(section)}>
           {section.toUpperCase()}
         </button>
       </Link>
