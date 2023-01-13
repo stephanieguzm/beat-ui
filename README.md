@@ -1,7 +1,7 @@
 # The Beat
 
 ## Overview
-The Beat is a web application for people on the move who want the latest news but don't have time to read lengthy articles.<br>
+The Beat is a web application for people who want the latest news but don't have time to read lengthy articles.<br>
 The application consumes the [New York Times Top Stories API](https://developer.nytimes.com/docs/top-stories-product/1/overview).
 
 ### User Stories: 
