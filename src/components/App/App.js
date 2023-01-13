@@ -31,9 +31,13 @@ const App = () => {
   return (
     <div className='app'>
       <header className='header-container'>
-        <nav><Link to='/'><h1>The Beat</h1></Link></nav>
-        <p>{pageTitle} SECTION</p>
-        <p className='home-btn'data-cy='home-btn'>{homeLink}</p>
+        <nav>
+          <Link to='/'>
+            <h1 className='header-text'>The Beat</h1>
+          </Link>
+        </nav>
+        <p className='header-text'>{pageTitle} SECTION</p>
+        <p className='home-btn header-text'data-cy='home-btn'>{homeLink}</p>
       </header>
       <main className='main-container'>
         <Sections 
