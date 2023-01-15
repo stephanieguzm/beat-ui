@@ -28,7 +28,7 @@ https://user-images.githubusercontent.com/101955307/212229485-8c5e89d3-f675-4a48
 4. Obtain an API key from The New York Times following [these instructions](https://developer.nytimes.com/get-started)
 5. Update the repository's `.env` file (found in the `root` directory) with your new API key
   ```
-  REACT_APPP_API_KEY="YOUR-KEY-HERE"
+  REACT_APP_API_KEY="YOUR-KEY-HERE"
   ```
 6. Restart your server on your command line:
   ```
